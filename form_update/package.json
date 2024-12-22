@@ -1,0 +1,23 @@
+{
+  "name": "form_update",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "moment-timezone": "^0.5.46"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

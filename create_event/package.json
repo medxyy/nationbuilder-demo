@@ -1,0 +1,16 @@
+{
+  "name": "nationbuilder-demo",
+  "version": "1.0.0",
+  "description": "API Endpoint: Events      Create an event     Make a form that allows others to update that event",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "moment-timezone": "^0.5.46"
+  }
+}
