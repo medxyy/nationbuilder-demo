@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Event</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Event</h1>
+        <form id="eventForm" action="/update-event" method="POST">
+            <div class="form-group">
+                <label for="id">Event ID: (update event ID: 2)</label>
+                <input type="text" readonly id="id" name="id" value="2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Event Status:</label>
+                <input type="text" id="status" name="status" value="unlisted" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Event Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="headline">Event Headline:</label>
+                <input type="text" id="headline" name="headline"  >
+            </div>
+
+            <div class="form-group">
+                <label for="title">Event Title:</label>
+                <input type="text" id="title" name="title"  >
+            </div>
+
+            <div class="form-group">
+                <label for="tags">Tags (comma separated):</label>
+                <input type="text" id="tags" name="tags">
+            </div>
+
+            <div class="form-group">
+                <label for="intro">Event Introduction:</label>
+                <input type="text" id="intro" name="intro" >
+            </div>
+
+            <h3>Contact Information</h3>
+            <div class="form-group">
+                <label for="contactName">Contact Name:</label>
+                <input type="text" id="contactName" name="contactName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactPhone">Contact Phone:</label>
+                <input type="text" id="contactPhone" name="contactPhone" >
+            </div>
+
+            <div class="form-group">
+                <label for="contactEmail">Contact Email:</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+            </div>
+
+            <h3>Event Timing</h3>
+            <div class="form-group">
+                <label for="startTime">Start Time:</label>
+                <input type="text" id="startTime" name="startTime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endTime">End Time:</label>
+                <input type="text" id="endTime" name="endTime" required>
+            </div>
+
+            <h3>Venue Information</h3>
+            <div class="form-group">
+                <label for="venueName">Venue Name:</label>
+                <input type="text" id="venueName" name="venueName">
+            </div>
+
+            <div class="form-group">
+                <label for="venueAddress1">Venue Address:</label>
+                <input type="text" id="venueAddress1" name="venueAddress1">
+            </div>
+
+            <div class="form-group">
+                <label for="venueCity">Venue City:</label>
+                <input type="text" id="venueCity" name="venueCity">
+            </div>
+
+            <div class="form-group">
+                <label for="venueState">Venue State:</label>
+                <input type="text" id="venueState" name="venueState">
+            </div>
+
+
+            <button type="submit">Update Event</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#startTime", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                onChange: function(selectedDates, dateStr, instance) {
+                    const utcString = selectedDates[0].toISOString(); // Convert to UTC string
+                    document.getElementById('startTime').dataset.utcString = utcString;
+                }
+            });
+            flatpickr("#endTime", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                onChange: function(selectedDates, dateStr, instance) {
+                    const utcString = selectedDates[0].toISOString(); // Convert to UTC string
+                    document.getElementById('endTime').dataset.utcString = utcString;
+                }
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
